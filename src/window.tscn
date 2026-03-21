@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://cs4wwpmijbnve"]
+
+[ext_resource type="Script" uid="uid://co8fpf3bui4ot" path="res://addons/qq/window.gd" id="1_bfnu7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f5mmk"]
+bg_color = Color(0.07888999, 0.07888999, 0.07888999, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bfnu7"]
+bg_color = Color(0.11810568, 0.11810568, 0.11810568, 2)
+
+[node name="Window" type="Window" unique_id=1070286951]
+oversampling_override = 1.0
+title = "Source Export"
+initial_position = 2
+size = Vector2i(500, 300)
+transient = true
+exclusive = true
+min_size = Vector2i(500, 300)
+script = ExtResource("1_bfnu7")
+
+[node name="background" type="Panel" parent="." unique_id=477178621]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f5mmk")
+
+[node name="vbox" type="VBoxContainer" parent="background" unique_id=327265076]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 0
+
+[node name="panel" type="PanelContainer" parent="background/vbox" unique_id=509773834]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_bfnu7")
+
+[node name="margin" type="MarginContainer" parent="background/vbox/panel" unique_id=1011913108]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+
+[node name="progress" type="ProgressBar" parent="background/vbox/panel/margin" unique_id=2023753409]
+layout_mode = 2
+size_flags_vertical = 4
+step = 1.0
+
+[node name="margin" type="MarginContainer" parent="background/vbox" unique_id=211875985]
+layout_mode = 2
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="export" type="Button" parent="background/vbox/margin" unique_id=1581789135]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Export"
