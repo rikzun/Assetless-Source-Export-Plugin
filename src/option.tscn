@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bgglukdd0tp32"]
+
+[ext_resource type="Script" uid="uid://cgrn3fy3jv5h1" path="res://addons/Assetless Source Export Plugin/src/option.gd" id="1_t8e5r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sfs4u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t8e5r"]
+content_margin_left = 8.0
+
+[node name="HBoxContainer" type="HBoxContainer" unique_id=1168671135]
+custom_minimum_size = Vector2(0, 32)
+mouse_default_cursor_shape = 2
+script = ExtResource("1_t8e5r")
+
+[node name="Label" type="Label" parent="." unique_id=1810330756]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sfs4u")
+vertical_alignment = 1
+
+[node name="CheckBox" type="CheckBox" parent="." unique_id=1009928701]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_t8e5r")

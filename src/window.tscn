@@ -1,32 +1,65 @@
 [gd_scene format=3 uid="uid://cs4wwpmijbnve"]
 
-[ext_resource type="Script" uid="uid://co8fpf3bui4ot" path="res://addons/qq/window.gd" id="1_bfnu7"]
+[ext_resource type="Script" uid="uid://clqhbtbe5e6et" path="res://addons/Assetless Source Export Plugin/src/window.gd" id="1_pjgih"]
+[ext_resource type="PackedScene" uid="uid://bgglukdd0tp32" path="res://addons/Assetless Source Export Plugin/src/option.tscn" id="2_gv23u"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f5mmk"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gv23u"]
 bg_color = Color(0.07888999, 0.07888999, 0.07888999, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bfnu7"]
-bg_color = Color(0.11810568, 0.11810568, 0.11810568, 2)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_maria"]
+bg_color = Color(0.12202725, 0.12202725, 0.12202725, 2)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pjgih"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fmw8r"]
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 10.0
+content_margin_bottom = 4.0
+bg_color = Color(0.10634097, 0.10634097, 0.10634097, 2)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.23575273, 0.23575273, 0.23575273, 2)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="DPITexture" id="DPITexture_vx4ma"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"#e0e0e0\" d=\"M2 2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-4a1 1 0 0 1-1-1V3a1 1 0 0 0-1-1z\"/></svg>
+"
+saturation = 2.0
+color_map = {
+Color(1, 0.37254903, 0.37254903, 1): Color(1, 0.47, 0.42, 1),
+Color(0.37254903, 1, 0.5921569, 1): Color(0.45, 0.95, 0.5, 1),
+Color(1, 0.8666667, 0.39607844, 1): Color(0.83, 0.78, 0.62, 1)
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_maria"]
+content_margin_left = 4.0
+content_margin_right = 4.0
 
 [node name="Window" type="Window" unique_id=1070286951]
 oversampling_override = 1.0
-title = "Source Export"
+title = "Assetless Source Export Plugin"
 initial_position = 2
-size = Vector2i(500, 300)
+size = Vector2i(800, 500)
 transient = true
 exclusive = true
 min_size = Vector2i(500, 300)
-script = ExtResource("1_bfnu7")
+script = ExtResource("1_pjgih")
 
-[node name="background" type="Panel" parent="." unique_id=477178621]
+[node name="Panel" type="Panel" parent="." unique_id=477178621]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_f5mmk")
+theme_override_styles/panel = SubResource("StyleBoxFlat_gv23u")
 
-[node name="vbox" type="VBoxContainer" parent="background" unique_id=327265076]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=327265076]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,27 +69,116 @@ grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 0
 
-[node name="panel" type="PanelContainer" parent="background/vbox" unique_id=509773834]
+[node name="PanelContainer" type="PanelContainer" parent="Panel/VBoxContainer" unique_id=509773834]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_bfnu7")
+theme_override_styles/panel = SubResource("StyleBoxFlat_maria")
 
-[node name="margin" type="MarginContainer" parent="background/vbox/panel" unique_id=1011913108]
+[node name="MarginBox" type="MarginContainer" parent="Panel/VBoxContainer/PanelContainer" unique_id=1011913108]
 layout_mode = 2
 theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
 
-[node name="progress" type="ProgressBar" parent="background/vbox/panel/margin" unique_id=2023753409]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/PanelContainer/MarginBox" unique_id=1790071823]
 layout_mode = 2
-size_flags_vertical = 4
-step = 1.0
+theme_override_constants/separation = 8
 
-[node name="margin" type="MarginContainer" parent="background/vbox" unique_id=211875985]
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/VBoxContainer/PanelContainer/MarginBox/HBoxContainer" unique_id=581529987]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/PanelContainer/MarginBox/HBoxContainer/ScrollContainer" unique_id=2006763088]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/VBoxContainer/PanelContainer/MarginBox/HBoxContainer" unique_id=1100420904]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/PanelContainer/MarginBox/HBoxContainer/VBoxContainer2" unique_id=2020608524]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer/PanelContainer/MarginBox/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=1932424109]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pjgih")
+text = "Output:"
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="Panel/VBoxContainer/PanelContainer/MarginBox/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=985442838]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_fmw8r")
+text = "D:/workspace/games/trpg"
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer/PanelContainer/MarginBox/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=666109777]
+layout_mode = 2
+icon = SubResource("DPITexture_vx4ma")
+
+[node name="FileDialog" type="FileDialog" parent="Panel/VBoxContainer/PanelContainer/MarginBox/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=1393270100]
+oversampling_override = 1.0
+title = "Open a Directory"
+size = Vector2i(660, 360)
+file_mode = 2
+access = 2
+favorites_enabled = false
+recent_list_enabled = false
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer/PanelContainer/MarginBox/HBoxContainer/VBoxContainer2" unique_id=1457169404]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer/PanelContainer/MarginBox/HBoxContainer/VBoxContainer2/HBoxContainer2" unique_id=1800710574]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pjgih")
+text = "Archive name:"
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="Panel/VBoxContainer/PanelContainer/MarginBox/HBoxContainer/VBoxContainer2/HBoxContainer2" unique_id=624285337]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_fmw8r")
+text = "kekw"
+
+[node name="Label3" type="Label" parent="Panel/VBoxContainer/PanelContainer/MarginBox/HBoxContainer/VBoxContainer2/HBoxContainer2" unique_id=1121744003]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/normal = SubResource("StyleBoxEmpty_maria")
+text = ".zip"
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="Panel/VBoxContainer/PanelContainer/MarginBox/HBoxContainer/VBoxContainer2" unique_id=170038211]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="HBoxContainer6" parent="Panel/VBoxContainer/PanelContainer/MarginBox/HBoxContainer/VBoxContainer2" unique_id=1168671135 instance=ExtResource("2_gv23u")]
+layout_mode = 2
+text = "Exclude .godot folder"
+key = "exclude.godotFolder"
+
+[node name="HBoxContainer5" parent="Panel/VBoxContainer/PanelContainer/MarginBox/HBoxContainer/VBoxContainer2" unique_id=2099777353 instance=ExtResource("2_gv23u")]
+layout_mode = 2
+text = "Exclude this plugin folder"
+key = "exclude.pluginFolder"
+
+[node name="HBoxContainer7" parent="Panel/VBoxContainer/PanelContainer/MarginBox/HBoxContainer/VBoxContainer2" unique_id=1183824546 instance=ExtResource("2_gv23u")]
+layout_mode = 2
+text = "Exclude this plugin settings cache"
+key = "exclude.pluginSettings"
+
+[node name="MarginBox" type="MarginContainer" parent="Panel/VBoxContainer" unique_id=211875985]
 layout_mode = 2
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="export" type="Button" parent="background/vbox/margin" unique_id=1581789135]
+[node name="Button" type="Button" parent="Panel/VBoxContainer/MarginBox" unique_id=1581789135]
+custom_minimum_size = Vector2(105, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4

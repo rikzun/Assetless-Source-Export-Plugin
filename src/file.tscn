@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://beh6k84ln8p2"]
+
+[ext_resource type="Script" uid="uid://dgg6obrm81c8t" path="res://addons/Assetless Source Export Plugin/src/file.gd" id="1_75tio"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_75tio"]
+bg_color = Color(0.161, 0.161, 0.161, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f2pap"]
+bg_color = Color(0.25903922, 0.25903922, 0.25903922, 2)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qrxas"]
+bg_color = Color(0.20413725, 0.20413725, 0.20413725, 2)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2gdo"]
+bg_color = Color(0.30217648, 0.30217648, 0.30217648, 3)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f2pap"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_75tio"]
+content_margin_left = 12.0
+
+[node name="Panel" type="Button" unique_id=2008565370]
+custom_minimum_size = Vector2(200, 40)
+offset_right = 200.0
+offset_bottom = 40.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_75tio")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f2pap")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qrxas")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_h2gdo")
+theme_override_styles/focus = SubResource("StyleBoxFlat_75tio")
+script = ExtResource("1_75tio")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1331006829]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=127408019]
+clip_contents = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+expand_mode = 2
+stretch_mode = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=163866078]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer" unique_id=80228044]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/normal = SubResource("StyleBoxEmpty_f2pap")
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="CheckBox" type="CheckBox" parent="HBoxContainer" unique_id=825881667]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_75tio")
+button_pressed = true
