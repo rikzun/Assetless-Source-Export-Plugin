@@ -4,7 +4,7 @@ Godot addon that exports source code with blank game assets
 
 ![GitHub Logo](./preview.png)
 
-## To Do
+## Features
 - [x] Images
 	- [x] bmp
 	- [x] dds
@@ -15,7 +15,8 @@ Godot addon that exports source code with blank game assets
 	- [x] tga
 	- [x] webp
 - [x] SVG
-- [x] Resources
+- [x] Resources 
+- [x] Settings cache
 - [ ] Swap files
 - [ ] Random colors
 - [ ] Audio
