@@ -1,13 +1,13 @@
-# Assetless Source Export Plugin
+# Assetless Source Export Addon
 
 Godot addon that exports source code with blank game assets
 
 ![GitHub Logo](./preview.png)
 
 ## Installation
-1. Download `assetless-source-export-plugin.zip` from [latest release](https://github.com/rikzun/Assetless-Source-Export-Plugin/releases/latest)
+1. Download `assetless-source-export-addon.zip` from [latest release](https://github.com/rikzun/Assetless-Source-Export-Addon/releases/latest)
 2. Extract archive
-3. Move `Assetless Source Export Plugin` to `{YOUR_PROJECT}/addons/`
+3. Move `Assetless Source Export Addon` to `{YOUR_PROJECT}/addons/`
 4. Go to Project/Project Settings.../Plugins
 5. Enable `Assetless Source Export`
 
